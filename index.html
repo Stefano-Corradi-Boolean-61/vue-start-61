@@ -49,6 +49,58 @@
     <button @click="arrowFunction()">arrowFunction</button><br>
     <button @click="toggleGrassetto()">toggle grassetto con funzione</button><br>
     <button @click="cambiaMessaggio('Buon appetito!')">cambia messaggio</button><br>
+    <!--     {'stringaCheVieneStampata' : seVero}     -->
+    <h3 :class="{'rosso' : isRosso}">Sono rosso?</h3>
+    <!--  seSonoVero ? 'stampaQuesto' : 'stapamiSeNonVero'    -->
+    <h3 :class="isRosso ? 'rosso' : 'blu'">Sono rosso?</h3>
+    <button @click="isRosso = !isRosso">Toggle rosso</button>
+
+    <p v-show="visualizzaTesto">testo che stampo con v-show</p>
+    <p v-if="visualizzaTesto">testo che stampo se è vero</p>
+    <p v-else>testo che stampo se NON è vero</p>
+    <br><button @click="visualizzaTesto = !visualizzaTesto">toggle testo</button>
+
+    <h3>Confronto fra Numero 1: {{numero1}} e Numero 2: {{numero2}}</h3>
+    <p v-if="numero1 > numero2"> il nuemro 1 è maggiorne ddel numero 2</p>
+    <p v-else-if="numero2 > numero1"> il nuemro 2 è maggiorne ddel numero 1</p>
+    <p v-else>i 2 numero sono uguali</p>
+
+    <h3>Array Nomi</h3>
+    <ul>
+      <!--  v-for="elementoAlSingolare in array" -->
+      <li v-for="nome in nomi" >{{nome}}</li>
+    </ul>
+    <ul>
+      <!--  v-for="(elementoAlSingolare, indice) in array" -->
+      <li v-for="(nome, indice) in nomi" >{{indice}} {{nome}}</li>
+    </ul>
+
+    <h3>Oggetto User</h3>
+    <ul>
+      <!-- elemento in oggetto -->
+      <li v-for="el in user">{{el}}</li>
+    </ul>
+    <ul>
+      <!-- (elemnto, chiave) in oggetto -->
+      <li v-for="(el, key) in user">La chiave è: {{key}} e il suo valore è: {{el}}</li>
+    </ul>
+    <ul>
+      <!-- (elemnto, chiave, indice) in oggetto -->
+      <li v-for="(el, key, index) in user">{{index}} {{key}} {{el}}</li>
+    </ul>
+
+    <h3>Array di oggetti</h3>
+
+    <div 
+      v-for="classe in classiBooolean" 
+      class="box">
+        <h2>Nome classe: {{classe.nome}}</h2>
+        <p>Numwero studenti: {{classe.studenti}}</p>
+        <h3>Insegnanti</h3>
+        <ul>
+          <li v-for="teacher in classe.teachers" >{{teacher}}</li>
+        </ul>
+    </div>
     
     
 

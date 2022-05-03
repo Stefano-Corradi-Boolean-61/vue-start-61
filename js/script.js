@@ -11,7 +11,34 @@ const app = new Vue({
     messaggio: 'ciao mondo',
     mioColore: '',
     mioStile: 'grassetto',
-    isGrassetto : false
+    isGrassetto : false,
+    isRosso: false,
+    visualizzaTesto: true,
+    numero1: 15,
+    numero2: 15,
+    nomi: ['Ugo','Giuseppe','Martina'],
+    user: {
+      firstname: 'Giuseppe',
+      lastname: 'Verdi',
+      age: 30
+    },
+    classiBooolean:[
+      {
+        nome: '#61',
+        studenti: 35,
+        teachers: ['Stefano','Simone', 'Giovanni']
+      },
+      {
+        nome: '#62',
+        studenti: 30,
+        teachers: ['Pino','Rino', 'Gino']
+      },
+      {
+        nome: '#59',
+        studenti: 34,
+        teachers: ['Ugo','Marta', 'Berta']
+      },
+    ]
   },
 
   // le funzioni vanno messe demtro la proprietà methods
